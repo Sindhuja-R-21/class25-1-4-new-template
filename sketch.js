@@ -10,6 +10,7 @@ var angle = 60;
 var ground;
 var ball;
 
+//Declaring the objects
 var fan1,fan2,fan3,fan4;
 
 var btn2;
@@ -29,6 +30,7 @@ function setup() {
   var ground_options = {
     isStatic: true,
   };
+
   ground = Bodies.rectangle(0, 400, 750, 20, ground_options);
   World.add(world, ground);
 
@@ -40,11 +42,10 @@ function setup() {
   ball = Bodies.circle(200, 200, 20, ball_options);
   World.add(world, ball);
 
-  //Creating objects for Ground class
+  //Creating Objects for Ground Class
   fan1=new Ground(50,370,50,30);
-
-
- 
+  
+  
 }
 
 function draw() {
@@ -54,13 +55,16 @@ function draw() {
   rectMode(CENTER);
   ellipseMode(RADIUS);
 
-  ellipse(ball.position.x, ball.position.y, 20);
+  ellipse(ball.position.x, ball.position.y, 20,20);
+
   push()
   fill("brown")
   rect(ground.position.x, ground.position.y, 750, 20);
   pop()
+ 
+   //ObjectName.FunctionName()
+  fan1.show()
   
-  fan1.show();
  
 }
 
